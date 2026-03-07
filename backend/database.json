@@ -1,0 +1,945 @@
+{
+  "users": [
+    {
+      "_id": "admin001",
+      "name": "Admin",
+      "email": "admin@ecom.com",
+      "password": "$2a$12$x/Gq7sFU9p84InxOkUtp.e.Wu9RCPA921ktOp3NAsHtQsHbSuM4Re",
+      "role": "admin",
+      "avatar": "",
+      "phone": "+880 1700000000",
+      "address": {
+        "street": "123 Admin St",
+        "city": "Dhaka",
+        "state": "Dhaka",
+        "zipCode": "1000",
+        "country": "Bangladesh"
+      },
+      "isBlocked": false,
+      "wishlist": [],
+      "createdAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "user001",
+      "name": "Test User",
+      "email": "user@ecom.com",
+      "password": "$2a$12$F6oJ9KeYRgxwHa1sa8oLgOJyj9TNPLym.G8xb5PEe2ymiKmXUz.mO",
+      "role": "user",
+      "avatar": "",
+      "phone": "+880 1800000000",
+      "address": {
+        "street": "456 User St",
+        "city": "Chittagong",
+        "state": "Chittagong",
+        "zipCode": "4000",
+        "country": "Bangladesh"
+      },
+      "isBlocked": false,
+      "wishlist": [],
+      "createdAt": "2025-03-15T00:00:00.000Z"
+    },
+    {
+      "_id": "user002",
+      "name": "Rahim Ahmed",
+      "email": "rahim@gmail.com",
+      "password": "$2a$12$F6oJ9KeYRgxwHa1sa8oLgOJyj9TNPLym.G8xb5PEe2ymiKmXUz.mO",
+      "role": "user",
+      "avatar": "",
+      "phone": "+880 1900000000",
+      "address": {
+        "street": "78 River Road",
+        "city": "Sylhet",
+        "state": "Sylhet",
+        "zipCode": "3100",
+        "country": "Bangladesh"
+      },
+      "isBlocked": false,
+      "wishlist": [],
+      "createdAt": "2025-06-20T00:00:00.000Z"
+    },
+    {
+      "_id": "user003",
+      "name": "Fatima Khan",
+      "email": "fatima@gmail.com",
+      "password": "$2a$12$F6oJ9KeYRgxwHa1sa8oLgOJyj9TNPLym.G8xb5PEe2ymiKmXUz.mO",
+      "role": "user",
+      "avatar": "",
+      "phone": "+880 1600000000",
+      "address": {
+        "street": "22 Garden Lane",
+        "city": "Rajshahi",
+        "state": "Rajshahi",
+        "zipCode": "6000",
+        "country": "Bangladesh"
+      },
+      "isBlocked": false,
+      "wishlist": [],
+      "createdAt": "2025-08-10T00:00:00.000Z"
+    }
+  ],
+  "categories": [
+    {
+      "_id": "cat008",
+      "name": "Accessories",
+      "description": "Bags, watches, and accessories",
+      "image": "",
+      "isActive": true,
+      "createdAt": "2026-02-27T11:37:24.475Z"
+    },
+    {
+      "_id": "cat006",
+      "name": "Beauty",
+      "description": "Beauty and personal care",
+      "image": "",
+      "isActive": true,
+      "createdAt": "2026-02-27T11:37:24.475Z"
+    },
+    {
+      "_id": "cat004",
+      "name": "Books",
+      "description": "Books and stationery",
+      "image": "",
+      "isActive": true,
+      "createdAt": "2026-02-27T11:37:24.475Z"
+    },
+    {
+      "_id": "cat002",
+      "name": "Clothing",
+      "description": "Fashion and apparel",
+      "image": "",
+      "isActive": true,
+      "createdAt": "2026-02-27T11:37:24.475Z"
+    },
+    {
+      "_id": "cat001",
+      "name": "Electronics",
+      "description": "Electronic devices and gadgets",
+      "image": "",
+      "isActive": true,
+      "createdAt": "2026-02-27T11:37:24.432Z"
+    },
+    {
+      "_id": "cat007",
+      "name": "Groceries",
+      "description": "Food and daily essentials",
+      "image": "",
+      "isActive": true,
+      "createdAt": "2026-02-27T11:37:24.475Z"
+    },
+    {
+      "_id": "cat003",
+      "name": "Home & Living",
+      "description": "Home decor and furniture",
+      "image": "",
+      "isActive": true,
+      "createdAt": "2026-02-27T11:37:24.475Z"
+    },
+    {
+      "_id": "cat005",
+      "name": "Sports",
+      "description": "Sports and fitness equipment",
+      "image": "",
+      "isActive": true,
+      "createdAt": "2026-02-27T11:37:24.475Z"
+    }
+  ],
+  "products": [
+    {
+      "_id": "prod006",
+      "name": "Premium Cotton T-Shirt",
+      "description": "Comfortable 100% organic cotton t-shirt with modern fit. Breathable and durable.",
+      "price": 800,
+      "discountPrice": 650,
+      "category": "cat002",
+      "stock": 205,
+      "images": [],
+      "brand": "ComfortWear",
+      "featured": true,
+      "tags": [
+        "tshirt",
+        "cotton"
+      ],
+      "ratings": 4.2,
+      "numReviews": 56,
+      "reviews": [],
+      "sold": 445,
+      "createdAt": "2026-02-27T11:37:24.475Z",
+      "sizes": [
+        "S",
+        "M"
+      ],
+      "isActive": true
+    },
+    {
+      "_id": "prod013",
+      "name": "Programming with JavaScript",
+      "description": "Complete guide to modern JavaScript programming. Covers ES6+, async/await, Node.js.",
+      "price": 700,
+      "discountPrice": 550,
+      "category": "cat004",
+      "stock": 96,
+      "images": [],
+      "brand": "TechBooks",
+      "featured": true,
+      "tags": [
+        "book",
+        "javascript"
+      ],
+      "ratings": 4.8,
+      "numReviews": 42,
+      "reviews": [],
+      "sold": 344,
+      "createdAt": "2026-02-27T11:37:24.476Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod005",
+      "name": "Portable Power Bank 20000mAh",
+      "description": "High-capacity power bank with fast charging, dual USB ports, and LED indicator.",
+      "price": 2200,
+      "discountPrice": 1800,
+      "category": "cat001",
+      "stock": 100,
+      "images": [],
+      "brand": "PowerUp",
+      "featured": false,
+      "tags": [
+        "powerbank",
+        "charging"
+      ],
+      "ratings": 4.4,
+      "numReviews": 45,
+      "reviews": [],
+      "sold": 320,
+      "createdAt": "2026-02-27T11:37:24.475Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod012",
+      "name": "Stainless Steel Water Bottle",
+      "description": "Double-wall vacuum insulated water bottle. Keeps drinks cold 24hrs or hot 12hrs.",
+      "price": 950,
+      "discountPrice": 750,
+      "category": "cat003",
+      "stock": 120,
+      "images": [],
+      "brand": "HydroLife",
+      "featured": false,
+      "tags": [
+        "bottle",
+        "eco-friendly"
+      ],
+      "ratings": 4.4,
+      "numReviews": 67,
+      "reviews": [],
+      "sold": 280,
+      "createdAt": "2026-02-27T11:37:24.476Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod004",
+      "name": "Mechanical Gaming Keyboard",
+      "description": "RGB mechanical keyboard with Cherry MX switches, programmable keys, and aluminum build.",
+      "price": 6500,
+      "discountPrice": 5500,
+      "category": "cat001",
+      "stock": 28,
+      "images": [],
+      "brand": "KeyMaster",
+      "featured": true,
+      "tags": [
+        "keyboard",
+        "gaming"
+      ],
+      "ratings": 4.7,
+      "numReviews": 32,
+      "reviews": [],
+      "sold": 207,
+      "createdAt": "2026-02-27T11:37:24.475Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod017",
+      "name": "Wireless Charging Pad",
+      "description": "Fast wireless charging pad compatible with all Qi-enabled devices.",
+      "price": 1200,
+      "discountPrice": 950,
+      "category": "cat001",
+      "stock": 70,
+      "images": [],
+      "brand": "ChargePro",
+      "featured": false,
+      "tags": [
+        "charger",
+        "wireless"
+      ],
+      "ratings": 4.2,
+      "numReviews": 33,
+      "reviews": [],
+      "sold": 200,
+      "createdAt": "2026-02-27T11:37:24.477Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod009",
+      "name": "Running Shoes - Ultralight",
+      "description": "Lightweight running shoes with responsive cushioning and breathable mesh upper.",
+      "price": 4200,
+      "discountPrice": 3500,
+      "category": "cat005",
+      "stock": 64,
+      "images": [],
+      "brand": "SpeedRun",
+      "featured": true,
+      "tags": [
+        "shoes",
+        "running"
+      ],
+      "ratings": 4.5,
+      "numReviews": 38,
+      "reviews": [],
+      "sold": 186,
+      "createdAt": "2026-02-27T11:37:24.475Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod007",
+      "name": "Slim Fit Denim Jeans",
+      "description": "Classic slim-fit denim jeans with stretch fabric for maximum comfort.",
+      "price": 2500,
+      "discountPrice": 2100,
+      "category": "cat002",
+      "stock": 80,
+      "images": [],
+      "brand": "DenimCo",
+      "featured": false,
+      "tags": [
+        "jeans",
+        "denim"
+      ],
+      "ratings": 4,
+      "numReviews": 28,
+      "reviews": [],
+      "sold": 180,
+      "createdAt": "2026-02-27T11:37:24.475Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod018",
+      "name": "Fitness Resistance Bands Set",
+      "description": "5-piece resistance bands set with different strength levels for home workouts.",
+      "price": 800,
+      "discountPrice": 650,
+      "category": "cat005",
+      "stock": 85,
+      "images": [],
+      "brand": "FlexFit",
+      "featured": false,
+      "tags": [
+        "fitness",
+        "resistance"
+      ],
+      "ratings": 4.3,
+      "numReviews": 41,
+      "reviews": [],
+      "sold": 170,
+      "createdAt": "2026-02-27T11:37:24.477Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod015",
+      "name": "Organic Face Serum",
+      "description": "Premium organic face serum with vitamin C, hyaluronic acid, and retinol.",
+      "price": 1200,
+      "discountPrice": 999,
+      "category": "cat006",
+      "stock": 55,
+      "images": [],
+      "brand": "GlowNatur",
+      "featured": false,
+      "tags": [
+        "skincare",
+        "organic"
+      ],
+      "ratings": 4.6,
+      "numReviews": 31,
+      "reviews": [],
+      "sold": 160,
+      "createdAt": "2026-02-27T11:37:24.477Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod001",
+      "name": "Wireless Bluetooth Headphones",
+      "description": "Premium noise-cancelling wireless headphones with 30hr battery life. Deep bass, crystal clear audio, and comfortable over-ear design.",
+      "price": 4500,
+      "discountPrice": 3800,
+      "category": "cat001",
+      "stock": 52,
+      "images": [],
+      "brand": "SoundMax",
+      "featured": true,
+      "tags": [
+        "headphones",
+        "wireless"
+      ],
+      "ratings": 5,
+      "numReviews": 1,
+      "reviews": [
+        {
+          "user": "user001",
+          "name": "Test User",
+          "rating": 5,
+          "comment": "good\n",
+          "createdAt": "2026-02-27T14:05:30.929Z"
+        }
+      ],
+      "sold": 143,
+      "createdAt": "2026-02-27T11:37:24.475Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod010",
+      "name": "Yoga Mat Premium",
+      "description": "Extra thick 6mm yoga mat with non-slip surface and alignment lines.",
+      "price": 1500,
+      "discountPrice": 1200,
+      "category": "cat005",
+      "stock": 77,
+      "images": [],
+      "brand": "FlexFit",
+      "featured": false,
+      "tags": [
+        "yoga",
+        "fitness"
+      ],
+      "ratings": 4.3,
+      "numReviews": 22,
+      "reviews": [],
+      "sold": 128,
+      "createdAt": "2026-02-27T11:37:24.476Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod016",
+      "name": "Premium Leather Wallet",
+      "description": "Handcrafted genuine leather bifold wallet with RFID blocking and multiple card slots.",
+      "price": 1800,
+      "discountPrice": 1500,
+      "category": "cat008",
+      "stock": 39,
+      "images": [
+        "/uploads/1772217283021-641617318_1502635468528834_6551273301770818426_n.jpg"
+      ],
+      "brand": "LeatherCraft",
+      "featured": true,
+      "tags": [
+        "wallet",
+        "leather"
+      ],
+      "ratings": 4.5,
+      "numReviews": 27,
+      "reviews": [],
+      "sold": 121,
+      "createdAt": "2026-02-27T11:37:24.477Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod020",
+      "name": "Sunglasses - UV400 Polarized",
+      "description": "Premium polarized sunglasses with UV400 protection and titanium frame.",
+      "price": 2200,
+      "discountPrice": 1800,
+      "category": "cat008",
+      "stock": 55,
+      "images": [],
+      "brand": "ShadeCraft",
+      "featured": false,
+      "tags": [
+        "sunglasses",
+        "polarized"
+      ],
+      "ratings": 4.1,
+      "numReviews": 24,
+      "reviews": [],
+      "sold": 105,
+      "createdAt": "2026-02-27T11:37:24.477Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod002",
+      "name": "Smart Watch Pro X",
+      "description": "Advanced smartwatch with health monitoring, GPS, water resistance, and 7-day battery life.",
+      "price": 8500,
+      "discountPrice": 7200,
+      "category": "cat001",
+      "stock": 29,
+      "images": [],
+      "brand": "TechWear",
+      "featured": true,
+      "tags": [
+        "smartwatch",
+        "fitness"
+      ],
+      "ratings": 4.3,
+      "numReviews": 18,
+      "reviews": [],
+      "sold": 99,
+      "createdAt": "2026-02-27T11:37:24.475Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod014",
+      "name": "Digital Marketing Mastery",
+      "description": "Learn SEO, social media marketing, email campaigns, and PPC advertising.",
+      "price": 600,
+      "discountPrice": 0,
+      "category": "cat004",
+      "stock": 65,
+      "images": [],
+      "brand": "BizBooks",
+      "featured": false,
+      "tags": [
+        "book",
+        "marketing"
+      ],
+      "ratings": 4.2,
+      "numReviews": 19,
+      "reviews": [],
+      "sold": 95,
+      "createdAt": "2026-02-27T11:37:24.476Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod011",
+      "name": "Modern Table Lamp",
+      "description": "Elegant LED table lamp with touch dimmer, 3 color temperatures, and USB charging port.",
+      "price": 1800,
+      "discountPrice": 1500,
+      "category": "cat003",
+      "stock": 45,
+      "images": [],
+      "brand": "LightCraft",
+      "featured": false,
+      "tags": [
+        "lamp",
+        "home"
+      ],
+      "ratings": 4.1,
+      "numReviews": 14,
+      "reviews": [],
+      "sold": 88,
+      "createdAt": "2026-02-27T11:37:24.476Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod019",
+      "name": "Bamboo Cutting Board Set",
+      "description": "Set of 3 organic bamboo cutting boards. Knife-friendly, antibacterial.",
+      "price": 1100,
+      "discountPrice": 899,
+      "category": "cat003",
+      "stock": 50,
+      "images": [],
+      "brand": "EcoKitchen",
+      "featured": false,
+      "tags": [
+        "kitchen",
+        "bamboo"
+      ],
+      "ratings": 4.4,
+      "numReviews": 16,
+      "reviews": [],
+      "sold": 78,
+      "createdAt": "2026-02-27T11:37:24.477Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod008",
+      "name": "Winter Jacket - Waterproof",
+      "description": "Insulated waterproof winter jacket with hood, windproof design, and warm fleece lining.",
+      "price": 5500,
+      "discountPrice": 4800,
+      "category": "cat002",
+      "stock": 35,
+      "images": [],
+      "brand": "WeatherPro",
+      "featured": true,
+      "tags": [
+        "jacket",
+        "winter"
+      ],
+      "ratings": 4.6,
+      "numReviews": 15,
+      "reviews": [],
+      "sold": 75,
+      "createdAt": "2026-02-27T11:37:24.475Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod003",
+      "name": "Ultra HD 4K Webcam",
+      "description": "Professional 4K webcam with auto-focus, built-in microphone, and wide-angle lens.",
+      "price": 3200,
+      "discountPrice": 0,
+      "category": "cat001",
+      "stock": 40,
+      "images": [],
+      "brand": "VisionPro",
+      "featured": false,
+      "tags": [
+        "webcam",
+        "4k"
+      ],
+      "ratings": 4.1,
+      "numReviews": 12,
+      "reviews": [],
+      "sold": 67,
+      "createdAt": "2026-02-27T11:37:24.475Z",
+      "isActive": true
+    }
+  ],
+  "orders": [
+    {
+      "_id": "vtabophk6lsri4lhncljs9",
+      "user": "admin001",
+      "items": [
+        {
+          "product": "prod002",
+          "name": "Smart Watch Pro X",
+          "image": "",
+          "price": 7200,
+          "quantity": 1,
+          "size": null,
+          "color": null
+        }
+      ],
+      "shippingAddress": {
+        "fullName": "Admin",
+        "phone": "01531817299",
+        "street": "123 Admin St",
+        "city": "Dhaka",
+        "state": "Jatrabari",
+        "country": "Bangladesh"
+      },
+      "paymentMethod": "cod",
+      "itemsPrice": 7200,
+      "shippingPrice": 0,
+      "taxPrice": 360,
+      "totalPrice": 7560,
+      "couponApplied": null,
+      "status": "shipped",
+      "paymentStatus": "paid",
+      "isPaid": false,
+      "createdAt": "2026-03-05T18:21:52.217Z"
+    },
+    {
+      "_id": "rpkg1xh6iwgud6u5k026u",
+      "user": "admin001",
+      "items": [
+        {
+          "product": "prod004",
+          "name": "Mechanical Gaming Keyboard",
+          "image": "",
+          "price": 5500,
+          "quantity": 1,
+          "size": null,
+          "color": null
+        },
+        {
+          "product": "prod006",
+          "name": "Premium Cotton T-Shirt",
+          "image": "",
+          "price": 650,
+          "quantity": 1,
+          "size": "S",
+          "color": null
+        }
+      ],
+      "shippingAddress": {
+        "fullName": "Admin",
+        "phone": "01531817299",
+        "street": "123 Admin St",
+        "city": "Dhaka",
+        "state": "Uttara",
+        "country": "Bangladesh"
+      },
+      "paymentMethod": "bkash",
+      "itemsPrice": 6150,
+      "shippingPrice": 0,
+      "taxPrice": 308,
+      "totalPrice": 6458,
+      "couponApplied": null,
+      "status": "delivered",
+      "paymentStatus": "paid",
+      "isPaid": true,
+      "createdAt": "2026-03-05T14:49:21.208Z",
+      "paidAt": "2026-03-05T18:10:29.684Z",
+      "isDelivered": true,
+      "deliveredAt": "2026-03-05T18:10:25.359Z"
+    },
+    {
+      "_id": "4q8zwajzd3gq29jvnssqk",
+      "user": "admin001",
+      "items": [
+        {
+          "product": "prod009",
+          "name": "Running Shoes - Ultralight",
+          "image": "",
+          "price": 3500,
+          "quantity": 1,
+          "size": null,
+          "color": null
+        }
+      ],
+      "shippingAddress": {
+        "fullName": "Admin",
+        "phone": "01867837855",
+        "street": "123 Admin St",
+        "city": "Dhaka",
+        "state": "Dhaka",
+        "country": "Bangladesh"
+      },
+      "paymentMethod": "cod",
+      "itemsPrice": 3500,
+      "shippingPrice": 100,
+      "taxPrice": 175,
+      "totalPrice": 3775,
+      "couponApplied": null,
+      "status": "cancelled",
+      "paymentStatus": "refunded",
+      "isPaid": false,
+      "createdAt": "2026-02-27T17:34:23.990Z",
+      "isDelivered": true,
+      "deliveredAt": "2026-03-05T18:10:33.345Z",
+      "paidAt": "2026-03-05T18:10:35.544Z"
+    },
+    {
+      "_id": "ord004",
+      "user": "user003",
+      "items": [
+        {
+          "product": "prod013",
+          "name": "Programming with JavaScript",
+          "image": "",
+          "price": 550,
+          "quantity": 2
+        }
+      ],
+      "shippingAddress": {
+        "fullName": "Fatima Khan",
+        "phone": "+880 1600000000",
+        "street": "22 Garden Lane",
+        "city": "Rajshahi",
+        "state": "Rajshahi",
+        "zipCode": "6000",
+        "country": "Bangladesh"
+      },
+      "paymentMethod": "cod",
+      "itemsPrice": 1100,
+      "shippingPrice": 100,
+      "taxPrice": 55,
+      "totalPrice": 1255,
+      "status": "cancelled",
+      "paymentStatus": "refunded",
+      "isPaid": false,
+      "createdAt": "2026-02-25T00:00:00.000Z",
+      "paidAt": "2026-03-05T15:07:09.340Z",
+      "isDelivered": true,
+      "deliveredAt": "2026-03-05T15:31:35.461Z"
+    },
+    {
+      "_id": "ord003",
+      "user": "user002",
+      "items": [
+        {
+          "product": "prod009",
+          "name": "Running Shoes - Ultralight",
+          "image": "",
+          "price": 3500,
+          "quantity": 1
+        },
+        {
+          "product": "prod010",
+          "name": "Yoga Mat Premium",
+          "image": "",
+          "price": 1200,
+          "quantity": 1
+        }
+      ],
+      "shippingAddress": {
+        "fullName": "Rahim Ahmed",
+        "phone": "+880 1900000000",
+        "street": "78 River Road",
+        "city": "Sylhet",
+        "state": "Sylhet",
+        "zipCode": "3100",
+        "country": "Bangladesh"
+      },
+      "paymentMethod": "nagad",
+      "itemsPrice": 4700,
+      "shippingPrice": 100,
+      "taxPrice": 235,
+      "totalPrice": 5035,
+      "status": "cancelled",
+      "paymentStatus": "refunded",
+      "isPaid": false,
+      "paidAt": "2026-03-05T17:16:52.640Z",
+      "createdAt": "2026-02-20T00:00:00.000Z",
+      "isDelivered": true,
+      "deliveredAt": "2026-03-05T15:31:38.492Z"
+    },
+    {
+      "_id": "ord002",
+      "user": "user001",
+      "items": [
+        {
+          "product": "prod004",
+          "name": "Mechanical Gaming Keyboard",
+          "image": "",
+          "price": 5500,
+          "quantity": 1
+        }
+      ],
+      "shippingAddress": {
+        "fullName": "Test User",
+        "phone": "+880 1800000000",
+        "street": "456 User St",
+        "city": "Chittagong",
+        "state": "Chittagong",
+        "zipCode": "4000",
+        "country": "Bangladesh"
+      },
+      "paymentMethod": "bkash",
+      "itemsPrice": 5500,
+      "shippingPrice": 0,
+      "taxPrice": 275,
+      "totalPrice": 5775,
+      "status": "cancelled",
+      "paymentStatus": "refunded",
+      "isPaid": false,
+      "paidAt": "2026-03-05T17:16:55.250Z",
+      "createdAt": "2026-02-10T00:00:00.000Z",
+      "isDelivered": true,
+      "deliveredAt": "2026-03-05T15:31:41.048Z"
+    },
+    {
+      "_id": "ord001",
+      "user": "user001",
+      "items": [
+        {
+          "product": "prod001",
+          "name": "Wireless Bluetooth Headphones",
+          "image": "",
+          "price": 3800,
+          "quantity": 1
+        },
+        {
+          "product": "prod006",
+          "name": "Premium Cotton T-Shirt",
+          "image": "",
+          "price": 650,
+          "quantity": 2
+        }
+      ],
+      "shippingAddress": {
+        "fullName": "Test User",
+        "phone": "+880 1800000000",
+        "street": "456 User St",
+        "city": "Chittagong",
+        "state": "Chittagong",
+        "zipCode": "4000",
+        "country": "Bangladesh"
+      },
+      "paymentMethod": "cod",
+      "itemsPrice": 5100,
+      "shippingPrice": 0,
+      "taxPrice": 255,
+      "totalPrice": 5355,
+      "status": "cancelled",
+      "paymentStatus": "refunded",
+      "isPaid": false,
+      "paidAt": "2026-03-05T17:16:57.446Z",
+      "isDelivered": true,
+      "deliveredAt": "2026-03-05T15:31:43.736Z",
+      "createdAt": "2026-01-12T00:00:00.000Z"
+    },
+    {
+      "_id": "d3u10zprz36oigcrw8kbo7",
+      "orderNumber": 1008,
+      "user": "admin001",
+      "items": [
+        {
+          "product": "prod016",
+          "quantity": 1,
+          "size": null,
+          "color": null,
+          "name": "Premium Leather Wallet",
+          "price": 1500,
+          "image": "/uploads/1772217283021-641617318_1502635468528834_6551273301770818426_n.jpg"
+        }
+      ],
+      "shippingAddress": {
+        "fullName": "Admin",
+        "phone": "01867837855",
+        "street": "123 Admin St",
+        "city": "Dhaka",
+        "state": "Dhanmondi",
+        "country": "Bangladesh"
+      },
+      "paymentMethod": "bkash",
+      "itemsPrice": 1500,
+      "shippingPrice": 70,
+      "totalPrice": 1570,
+      "status": "pending",
+      "paymentStatus": "submitted",
+      "createdAt": "2026-03-07T06:40:57.546Z",
+      "paymentInfo": {
+        "senderNumber": "01841729911",
+        "amountSent": "1570",
+        "transactionId": ""
+      }
+    }
+  ],
+  "coupons": [
+    {
+      "_id": "coup001",
+      "code": "WELCOME10",
+      "discountType": "percentage",
+      "discountValue": 10,
+      "minOrderAmount": 1000,
+      "maxDiscount": 500,
+      "usageLimit": null,
+      "usedCount": 12,
+      "expiresAt": "2027-12-31T00:00:00.000Z",
+      "isActive": true,
+      "createdAt": "2026-02-27T11:37:24.477Z"
+    },
+    {
+      "_id": "coup002",
+      "code": "SAVE500",
+      "discountType": "fixed",
+      "discountValue": 500,
+      "minOrderAmount": 3000,
+      "maxDiscount": null,
+      "usageLimit": null,
+      "usedCount": 8,
+      "expiresAt": "2027-06-30T00:00:00.000Z",
+      "isActive": true,
+      "createdAt": "2026-02-27T11:37:24.477Z"
+    },
+    {
+      "_id": "coup003",
+      "code": "MEGA20",
+      "discountType": "percentage",
+      "discountValue": 20,
+      "minOrderAmount": 5000,
+      "maxDiscount": 2000,
+      "usageLimit": 100,
+      "usedCount": 34,
+      "expiresAt": "2027-03-31T00:00:00.000Z",
+      "isActive": true,
+      "createdAt": "2026-02-27T11:37:24.477Z"
+    }
+  ]
+}
