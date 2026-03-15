@@ -704,7 +704,7 @@ textarea.form-input {
 /* Hero */
 .hero {
   position: relative;
-  min-height: 450px;
+  min-height: 380px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -737,12 +737,12 @@ textarea.form-input {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 40px;
+  padding: 20px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
   align-items: center;
 }
 
@@ -841,9 +841,9 @@ textarea.form-input {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
-  padding: 35px;
+  padding: 30px;
   width: 100%;
-  max-width: 450px;
+  max-width: 400px;
   box-shadow: var(--shadow-lg), var(--shadow-glow);
 }
 
@@ -858,33 +858,37 @@ textarea.form-input {
 
 .floating-badge {
   position: absolute;
-  padding: 12px 20px;
+  padding: 10px 16px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
-  z-index: 5;
   animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .floating-badge-1 {
-  top: -20px;
-  right: -40px;
+  top: 20px;
+  right: -30px;
   animation-delay: 0s;
 }
 
 .floating-badge-2 {
   bottom: 40px;
-  left: -60px;
+  left: -20px;
   animation-delay: 1.5s;
 }
-
-
 
 /* Sections */
 .section {

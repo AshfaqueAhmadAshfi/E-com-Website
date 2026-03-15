@@ -18,7 +18,7 @@ const PrivacyPolicy = () => (
             { title: 'Your Rights', content: 'You have the right to: access your personal data, correct inaccurate information, request deletion of your account and data, opt out of marketing communications, and withdraw consent at any time. To exercise these rights, contact us at support@x-look.com.' },
             { title: 'Data Retention', content: 'We retain your personal data for as long as your account is active or as needed to provide services. Order data is retained for up to 3 years for accounting and legal purposes. You may request deletion of your account at any time.' },
             { title: 'Changes to This Policy', content: 'We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically.' },
-            { title: 'Contact Us', content: 'If you have questions about this privacy policy or your personal data, contact us at: Email: support@x-look.com, Phone: +880 1531-817299, Facebook: facebook.com/xlookbd' },
+            { title: 'Contact Us', content: 'If you have questions about this privacy policy or your personal data, contact us at: Email: support@x-look.com, Phone: +880 1234-567890, Facebook: facebook.com/xlookbd' },
         ].map((section, i) => (
             <div key={i} style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: '24px', marginBottom: '16px' }}>
                 <h3 style={{ fontSize: '1.05rem', fontWeight: 700, marginBottom: '10px', color: 'var(--accent-light)' }}>{section.title}</h3>

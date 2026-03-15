@@ -44,11 +44,11 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="hero-visual">
-                        <div className="hero-card" style={{ position: 'relative' }}>
+                        <div className="hero-card">
                             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center', marginBottom: '12px' }}>
                                 <img src="/logo.png" alt="Logo" style={{ height: '35px', objectFit: 'contain' }} />
                                 <span style={{
-                                    fontSize: '1.8rem',
+                                    fontSize: '1.4rem',
                                     fontWeight: '800',
                                     background: 'var(--gradient-1)',
                                     WebkitBackgroundClip: 'text',
@@ -56,7 +56,7 @@ const Home = () => {
                                     WebkitTextFillColor: 'transparent'
                                 }}>X-Look</span>
                             </div>
-                            <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '1rem' }}>Premium Fashion & Lifestyle</p>
+                            <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Premium Fashion & Lifestyle</p>
                             <div style={{ display: 'flex', gap: '8px', marginTop: '20px' }}>
                                 <div style={{ flex: 1, padding: '12px', background: 'var(--accent-glow)', borderRadius: '10px', textAlign: 'center' }}>
                                     <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--accent)' }}>৳4,500</div>
@@ -67,16 +67,14 @@ const Home = () => {
                                     <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Shipping 5K+</div>
                                 </div>
                             </div>
-
-                            {/* Badges inside card for better relative positioning */}
-                            <div className="floating-badge floating-badge-1" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                <span style={{ fontSize: '1.2rem' }}>🔥</span>
-                                <div><div style={{ fontWeight: 600, fontSize: '0.8rem' }}>Flash Sale</div><div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Up to 60% OFF</div></div>
-                            </div>
-                            <div className="floating-badge floating-badge-2" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                <span style={{ fontSize: '1.2rem' }}>⚡</span>
-                                <div><div style={{ fontWeight: 600, fontSize: '0.8rem' }}>Fast Delivery</div><div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Within 24hrs</div></div>
-                            </div>
+                        </div>
+                        <div className="floating-badge floating-badge-1" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            <span style={{ fontSize: '1.2rem' }}>🔥</span>
+                            <div><div style={{ fontWeight: 600, fontSize: '0.8rem' }}>Flash Sale</div><div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Up to 60% OFF</div></div>
+                        </div>
+                        <div className="floating-badge floating-badge-2" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            <span style={{ fontSize: '1.2rem' }}>⚡</span>
+                            <div><div style={{ fontWeight: 600, fontSize: '0.8rem' }}>Fast Delivery</div><div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Within 24hrs</div></div>
                         </div>
                     </div>
                 </div>

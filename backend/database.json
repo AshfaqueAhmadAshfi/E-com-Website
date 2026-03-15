@@ -145,250 +145,6 @@
   ],
   "products": [
     {
-      "_id": "prod017",
-      "name": "Wireless Charging Pad",
-      "description": "Fast wireless charging pad compatible with all Qi-enabled devices.",
-      "price": 1200,
-      "discountPrice": 950,
-      "category": "cat001",
-      "stock": 70,
-      "images": [],
-      "brand": "ChargePro",
-      "featured": false,
-      "tags": [
-        "charger",
-        "wireless"
-      ],
-      "ratings": 4.2,
-      "numReviews": 33,
-      "reviews": [],
-      "sold": 200,
-      "createdAt": "2026-02-27T11:37:24.477Z",
-      "isActive": true
-    },
-    {
-      "_id": "prod018",
-      "name": "Fitness Resistance Bands Set",
-      "description": "5-piece resistance bands set with different strength levels for home workouts.",
-      "price": 800,
-      "discountPrice": 650,
-      "category": "cat005",
-      "stock": 85,
-      "images": [],
-      "brand": "FlexFit",
-      "featured": false,
-      "tags": [
-        "fitness",
-        "resistance"
-      ],
-      "ratings": 4.3,
-      "numReviews": 41,
-      "reviews": [],
-      "sold": 170,
-      "createdAt": "2026-02-27T11:37:24.477Z",
-      "isActive": true
-    },
-    {
-      "_id": "prod015",
-      "name": "Organic Face Serum",
-      "description": "Premium organic face serum with vitamin C, hyaluronic acid, and retinol.",
-      "price": 1200,
-      "discountPrice": 999,
-      "category": "cat006",
-      "stock": 55,
-      "images": [],
-      "brand": "GlowNatur",
-      "featured": false,
-      "tags": [
-        "skincare",
-        "organic"
-      ],
-      "ratings": 4.6,
-      "numReviews": 31,
-      "reviews": [],
-      "sold": 160,
-      "createdAt": "2026-02-27T11:37:24.477Z",
-      "isActive": true
-    },
-    {
-      "_id": "prod016",
-      "name": "Premium Leather Wallet",
-      "description": "Handcrafted genuine leather bifold wallet with RFID blocking and multiple card slots.",
-      "price": 1800,
-      "discountPrice": 1500,
-      "category": "cat008",
-      "stock": 38,
-      "images": [
-        "/uploads/1772217283021-641617318_1502635468528834_6551273301770818426_n.jpg"
-      ],
-      "brand": "LeatherCraft",
-      "featured": true,
-      "tags": [
-        "wallet",
-        "leather"
-      ],
-      "ratings": 4.5,
-      "numReviews": 27,
-      "reviews": [],
-      "sold": 122,
-      "createdAt": "2026-02-27T11:37:24.477Z",
-      "isActive": true
-    },
-    {
-      "_id": "prod020",
-      "name": "Sunglasses - UV400 Polarized",
-      "description": "Premium polarized sunglasses with UV400 protection and titanium frame.",
-      "price": 2200,
-      "discountPrice": 1800,
-      "category": "cat008",
-      "stock": 55,
-      "images": [],
-      "brand": "ShadeCraft",
-      "featured": false,
-      "tags": [
-        "sunglasses",
-        "polarized"
-      ],
-      "ratings": 4.1,
-      "numReviews": 24,
-      "reviews": [],
-      "sold": 105,
-      "createdAt": "2026-02-27T11:37:24.477Z",
-      "isActive": true
-    },
-    {
-      "_id": "prod019",
-      "name": "Bamboo Cutting Board Set",
-      "description": "Set of 3 organic bamboo cutting boards. Knife-friendly, antibacterial.",
-      "price": 1100,
-      "discountPrice": 899,
-      "category": "cat003",
-      "stock": 50,
-      "images": [],
-      "brand": "EcoKitchen",
-      "featured": false,
-      "tags": [
-        "kitchen",
-        "bamboo"
-      ],
-      "ratings": 4.4,
-      "numReviews": 16,
-      "reviews": [],
-      "sold": 78,
-      "createdAt": "2026-02-27T11:37:24.477Z",
-      "isActive": true
-    },
-    {
-      "_id": "prod013",
-      "name": "Programming with JavaScript",
-      "description": "Complete guide to modern JavaScript programming. Covers ES6+, async/await, Node.js.",
-      "price": 700,
-      "discountPrice": 550,
-      "category": "cat004",
-      "stock": 96,
-      "images": [],
-      "brand": "TechBooks",
-      "featured": true,
-      "tags": [
-        "book",
-        "javascript"
-      ],
-      "ratings": 4.8,
-      "numReviews": 42,
-      "reviews": [],
-      "sold": 344,
-      "createdAt": "2026-02-27T11:37:24.476Z",
-      "isActive": true
-    },
-    {
-      "_id": "prod012",
-      "name": "Stainless Steel Water Bottle",
-      "description": "Double-wall vacuum insulated water bottle. Keeps drinks cold 24hrs or hot 12hrs.",
-      "price": 950,
-      "discountPrice": 750,
-      "category": "cat003",
-      "stock": 120,
-      "images": [],
-      "brand": "HydroLife",
-      "featured": false,
-      "tags": [
-        "bottle",
-        "eco-friendly"
-      ],
-      "ratings": 4.4,
-      "numReviews": 67,
-      "reviews": [],
-      "sold": 280,
-      "createdAt": "2026-02-27T11:37:24.476Z",
-      "isActive": true
-    },
-    {
-      "_id": "prod010",
-      "name": "Yoga Mat Premium",
-      "description": "Extra thick 6mm yoga mat with non-slip surface and alignment lines.",
-      "price": 1500,
-      "discountPrice": 1200,
-      "category": "cat005",
-      "stock": 77,
-      "images": [],
-      "brand": "FlexFit",
-      "featured": false,
-      "tags": [
-        "yoga",
-        "fitness"
-      ],
-      "ratings": 4.3,
-      "numReviews": 22,
-      "reviews": [],
-      "sold": 128,
-      "createdAt": "2026-02-27T11:37:24.476Z",
-      "isActive": true
-    },
-    {
-      "_id": "prod014",
-      "name": "Digital Marketing Mastery",
-      "description": "Learn SEO, social media marketing, email campaigns, and PPC advertising.",
-      "price": 600,
-      "discountPrice": 0,
-      "category": "cat004",
-      "stock": 65,
-      "images": [],
-      "brand": "BizBooks",
-      "featured": false,
-      "tags": [
-        "book",
-        "marketing"
-      ],
-      "ratings": 4.2,
-      "numReviews": 19,
-      "reviews": [],
-      "sold": 95,
-      "createdAt": "2026-02-27T11:37:24.476Z",
-      "isActive": true
-    },
-    {
-      "_id": "prod011",
-      "name": "Modern Table Lamp",
-      "description": "Elegant LED table lamp with touch dimmer, 3 color temperatures, and USB charging port.",
-      "price": 1800,
-      "discountPrice": 1500,
-      "category": "cat003",
-      "stock": 45,
-      "images": [],
-      "brand": "LightCraft",
-      "featured": false,
-      "tags": [
-        "lamp",
-        "home"
-      ],
-      "ratings": 4.1,
-      "numReviews": 14,
-      "reviews": [],
-      "sold": 88,
-      "createdAt": "2026-02-27T11:37:24.476Z",
-      "isActive": true
-    },
-    {
       "_id": "prod006",
       "name": "Premium Cotton T-Shirt",
       "description": "Comfortable 100% organic cotton t-shirt with modern fit. Breathable and durable.",
@@ -415,6 +171,28 @@
       "isActive": true
     },
     {
+      "_id": "prod013",
+      "name": "Programming with JavaScript",
+      "description": "Complete guide to modern JavaScript programming. Covers ES6+, async/await, Node.js.",
+      "price": 700,
+      "discountPrice": 550,
+      "category": "cat004",
+      "stock": 96,
+      "images": [],
+      "brand": "TechBooks",
+      "featured": true,
+      "tags": [
+        "book",
+        "javascript"
+      ],
+      "ratings": 4.8,
+      "numReviews": 42,
+      "reviews": [],
+      "sold": 344,
+      "createdAt": "2026-02-27T11:37:24.476Z",
+      "isActive": true
+    },
+    {
       "_id": "prod005",
       "name": "Portable Power Bank 20000mAh",
       "description": "High-capacity power bank with fast charging, dual USB ports, and LED indicator.",
@@ -437,6 +215,28 @@
       "isActive": true
     },
     {
+      "_id": "prod012",
+      "name": "Stainless Steel Water Bottle",
+      "description": "Double-wall vacuum insulated water bottle. Keeps drinks cold 24hrs or hot 12hrs.",
+      "price": 950,
+      "discountPrice": 750,
+      "category": "cat003",
+      "stock": 120,
+      "images": [],
+      "brand": "HydroLife",
+      "featured": false,
+      "tags": [
+        "bottle",
+        "eco-friendly"
+      ],
+      "ratings": 4.4,
+      "numReviews": 67,
+      "reviews": [],
+      "sold": 280,
+      "createdAt": "2026-02-27T11:37:24.476Z",
+      "isActive": true
+    },
+    {
       "_id": "prod004",
       "name": "Mechanical Gaming Keyboard",
       "description": "RGB mechanical keyboard with Cherry MX switches, programmable keys, and aluminum build.",
@@ -456,6 +256,28 @@
       "reviews": [],
       "sold": 207,
       "createdAt": "2026-02-27T11:37:24.475Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod017",
+      "name": "Wireless Charging Pad",
+      "description": "Fast wireless charging pad compatible with all Qi-enabled devices.",
+      "price": 1200,
+      "discountPrice": 950,
+      "category": "cat001",
+      "stock": 70,
+      "images": [],
+      "brand": "ChargePro",
+      "featured": false,
+      "tags": [
+        "charger",
+        "wireless"
+      ],
+      "ratings": 4.2,
+      "numReviews": 33,
+      "reviews": [],
+      "sold": 200,
+      "createdAt": "2026-02-27T11:37:24.477Z",
       "isActive": true
     },
     {
@@ -503,6 +325,50 @@
       "isActive": true
     },
     {
+      "_id": "prod018",
+      "name": "Fitness Resistance Bands Set",
+      "description": "5-piece resistance bands set with different strength levels for home workouts.",
+      "price": 800,
+      "discountPrice": 650,
+      "category": "cat005",
+      "stock": 85,
+      "images": [],
+      "brand": "FlexFit",
+      "featured": false,
+      "tags": [
+        "fitness",
+        "resistance"
+      ],
+      "ratings": 4.3,
+      "numReviews": 41,
+      "reviews": [],
+      "sold": 170,
+      "createdAt": "2026-02-27T11:37:24.477Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod015",
+      "name": "Organic Face Serum",
+      "description": "Premium organic face serum with vitamin C, hyaluronic acid, and retinol.",
+      "price": 1200,
+      "discountPrice": 999,
+      "category": "cat006",
+      "stock": 55,
+      "images": [],
+      "brand": "GlowNatur",
+      "featured": false,
+      "tags": [
+        "skincare",
+        "organic"
+      ],
+      "ratings": 4.6,
+      "numReviews": 31,
+      "reviews": [],
+      "sold": 160,
+      "createdAt": "2026-02-27T11:37:24.477Z",
+      "isActive": true
+    },
+    {
       "_id": "prod001",
       "name": "Wireless Bluetooth Headphones",
       "description": "Premium noise-cancelling wireless headphones with 30hr battery life. Deep bass, crystal clear audio, and comfortable over-ear design.",
@@ -533,6 +399,74 @@
       "isActive": true
     },
     {
+      "_id": "prod010",
+      "name": "Yoga Mat Premium",
+      "description": "Extra thick 6mm yoga mat with non-slip surface and alignment lines.",
+      "price": 1500,
+      "discountPrice": 1200,
+      "category": "cat005",
+      "stock": 77,
+      "images": [],
+      "brand": "FlexFit",
+      "featured": false,
+      "tags": [
+        "yoga",
+        "fitness"
+      ],
+      "ratings": 4.3,
+      "numReviews": 22,
+      "reviews": [],
+      "sold": 128,
+      "createdAt": "2026-02-27T11:37:24.476Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod016",
+      "name": "Premium Leather Wallet",
+      "description": "Handcrafted genuine leather bifold wallet with RFID blocking and multiple card slots.",
+      "price": 1800,
+      "discountPrice": 1500,
+      "category": "cat008",
+      "stock": 39,
+      "images": [
+        "/uploads/1772217283021-641617318_1502635468528834_6551273301770818426_n.jpg"
+      ],
+      "brand": "LeatherCraft",
+      "featured": true,
+      "tags": [
+        "wallet",
+        "leather"
+      ],
+      "ratings": 4.5,
+      "numReviews": 27,
+      "reviews": [],
+      "sold": 121,
+      "createdAt": "2026-02-27T11:37:24.477Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod020",
+      "name": "Sunglasses - UV400 Polarized",
+      "description": "Premium polarized sunglasses with UV400 protection and titanium frame.",
+      "price": 2200,
+      "discountPrice": 1800,
+      "category": "cat008",
+      "stock": 55,
+      "images": [],
+      "brand": "ShadeCraft",
+      "featured": false,
+      "tags": [
+        "sunglasses",
+        "polarized"
+      ],
+      "ratings": 4.1,
+      "numReviews": 24,
+      "reviews": [],
+      "sold": 105,
+      "createdAt": "2026-02-27T11:37:24.477Z",
+      "isActive": true
+    },
+    {
       "_id": "prod002",
       "name": "Smart Watch Pro X",
       "description": "Advanced smartwatch with health monitoring, GPS, water resistance, and 7-day battery life.",
@@ -552,6 +486,72 @@
       "reviews": [],
       "sold": 99,
       "createdAt": "2026-02-27T11:37:24.475Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod014",
+      "name": "Digital Marketing Mastery",
+      "description": "Learn SEO, social media marketing, email campaigns, and PPC advertising.",
+      "price": 600,
+      "discountPrice": 0,
+      "category": "cat004",
+      "stock": 65,
+      "images": [],
+      "brand": "BizBooks",
+      "featured": false,
+      "tags": [
+        "book",
+        "marketing"
+      ],
+      "ratings": 4.2,
+      "numReviews": 19,
+      "reviews": [],
+      "sold": 95,
+      "createdAt": "2026-02-27T11:37:24.476Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod011",
+      "name": "Modern Table Lamp",
+      "description": "Elegant LED table lamp with touch dimmer, 3 color temperatures, and USB charging port.",
+      "price": 1800,
+      "discountPrice": 1500,
+      "category": "cat003",
+      "stock": 45,
+      "images": [],
+      "brand": "LightCraft",
+      "featured": false,
+      "tags": [
+        "lamp",
+        "home"
+      ],
+      "ratings": 4.1,
+      "numReviews": 14,
+      "reviews": [],
+      "sold": 88,
+      "createdAt": "2026-02-27T11:37:24.476Z",
+      "isActive": true
+    },
+    {
+      "_id": "prod019",
+      "name": "Bamboo Cutting Board Set",
+      "description": "Set of 3 organic bamboo cutting boards. Knife-friendly, antibacterial.",
+      "price": 1100,
+      "discountPrice": 899,
+      "category": "cat003",
+      "stock": 50,
+      "images": [],
+      "brand": "EcoKitchen",
+      "featured": false,
+      "tags": [
+        "kitchen",
+        "bamboo"
+      ],
+      "ratings": 4.4,
+      "numReviews": 16,
+      "reviews": [],
+      "sold": 78,
+      "createdAt": "2026-02-27T11:37:24.477Z",
       "isActive": true
     },
     {
@@ -600,42 +600,6 @@
     }
   ],
   "orders": [
-    {
-      "_id": "d3u10zprz36oigcrw8kbo7",
-      "orderNumber": 1008,
-      "user": "admin001",
-      "items": [
-        {
-          "product": "prod016",
-          "quantity": 1,
-          "size": null,
-          "color": null,
-          "name": "Premium Leather Wallet",
-          "price": 1500,
-          "image": "/uploads/1772217283021-641617318_1502635468528834_6551273301770818426_n.jpg"
-        }
-      ],
-      "shippingAddress": {
-        "fullName": "Admin",
-        "phone": "01867837855",
-        "street": "123 Admin St",
-        "city": "Dhaka",
-        "state": "Dhanmondi",
-        "country": "Bangladesh"
-      },
-      "paymentMethod": "bkash",
-      "itemsPrice": 1500,
-      "shippingPrice": 70,
-      "totalPrice": 1570,
-      "status": "pending",
-      "paymentStatus": "submitted",
-      "createdAt": "2026-03-07T06:40:57.546Z",
-      "paymentInfo": {
-        "senderNumber": "01841729911",
-        "amountSent": "1570",
-        "transactionId": ""
-      }
-    },
     {
       "_id": "vtabophk6lsri4lhncljs9",
       "user": "admin001",
@@ -901,8 +865,8 @@
       "createdAt": "2026-01-12T00:00:00.000Z"
     },
     {
-      "_id": "yv6vlsir5mtfv1m8h6eqe",
-      "orderNumber": 1009,
+      "_id": "d3u10zprz36oigcrw8kbo7",
+      "orderNumber": 1008,
       "user": "admin001",
       "items": [
         {
@@ -917,10 +881,10 @@
       ],
       "shippingAddress": {
         "fullName": "Admin",
-        "phone": "11111111111",
+        "phone": "01867837855",
         "street": "123 Admin St",
         "city": "Dhaka",
-        "state": "Uttara",
+        "state": "Dhanmondi",
         "country": "Bangladesh"
       },
       "paymentMethod": "bkash",
@@ -928,8 +892,13 @@
       "shippingPrice": 70,
       "totalPrice": 1570,
       "status": "pending",
-      "paymentStatus": "pending",
-      "createdAt": "2026-03-14T16:34:29.313Z"
+      "paymentStatus": "submitted",
+      "createdAt": "2026-03-07T06:40:57.546Z",
+      "paymentInfo": {
+        "senderNumber": "01841729911",
+        "amountSent": "1570",
+        "transactionId": ""
+      }
     }
   ],
   "coupons": [

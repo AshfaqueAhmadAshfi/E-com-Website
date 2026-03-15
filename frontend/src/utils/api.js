@@ -57,8 +57,5 @@ export const toggleBlockUserAPI = (id) => api.put(`/admin/users/${id}/block`);
 export const changeRoleAPI = (id, data) => api.put(`/admin/users/${id}/role`, data);
 export const getDashboardAPI = (params) => api.get('/admin/dashboard', { params });
 export const generateDescriptionAPI = (data) => api.post('/admin/generate-description', data);
-export const getCourierSettingsAPI = () => api.get('/admin/courier-settings');
-export const updateCourierSettingsAPI = (data) => api.put('/admin/courier-settings', data);
-export const shipOrderAPI = (id, data) => api.post(`/admin/orders/${id}/ship`, data);
 
 export default api;

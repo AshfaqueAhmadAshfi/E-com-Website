@@ -7,11 +7,10 @@ import {
     createCategoryAPI, updateCategoryAPI, deleteCategoryAPI,
     updateOrderStatusAPI, toggleBlockUserAPI, changeRoleAPI,
     createCouponAPI, deleteCouponAPI, deleteOrderAPI,
-    generateDescriptionAPI,
-    getCourierSettingsAPI, updateCourierSettingsAPI, shipOrderAPI
+    generateDescriptionAPI
 } from '../../utils/api.js';
 import toast from 'react-hot-toast';
-import { FiGrid, FiPackage, FiLayers, FiShoppingCart, FiUsers, FiTag, FiPlus, FiEdit, FiTrash2, FiDollarSign, FiTrendingUp, FiArrowLeft, FiLogOut, FiEye, FiCalendar, FiTruck } from 'react-icons/fi';
+import { FiGrid, FiPackage, FiLayers, FiShoppingCart, FiUsers, FiTag, FiPlus, FiEdit, FiTrash2, FiDollarSign, FiTrendingUp, FiArrowLeft, FiLogOut, FiEye, FiCalendar } from 'react-icons/fi';
 
 const AdminDashboard = () => {
     const { user, isAdmin, logout } = useAuth();
@@ -23,7 +22,6 @@ const AdminDashboard = () => {
     const [orders, setOrders] = useState([]);
     const [users, setUsers] = useState([]);
     const [coupons, setCoupons] = useState([]);
-    const [courierSettings, setCourierSettings] = useState({ pathao: {}, steadfast: {} });
     const [loading, setLoading] = useState(true);
     const [modal, setModal] = useState(null);
     const [activeOrder, setActiveOrder] = useState(null);
@@ -93,7 +91,6 @@ const AdminDashboard = () => {
             }
             if (activeTab === 'users') { const r = await getAdminUsersAPI({ limit: 50 }); setUsers(r.data.users); }
             if (activeTab === 'coupons') { const r = await getCouponsAPI(); setCoupons(r.data.coupons); }
-            if (activeTab === 'courier') { const r = await getCourierSettingsAPI(); setCourierSettings(r.data.settings); }
         } catch { }
         setLoading(false);
     };
@@ -202,26 +199,6 @@ const AdminDashboard = () => {
         } catch (err) { toast.error(err.response?.data?.message || 'Error'); }
     };
 
-    // Courier Settings
-    const handleCourierSave = async (e) => {
-        e.preventDefault();
-        try {
-            await updateCourierSettingsAPI(courierSettings);
-            toast.success('Courier settings saved');
-        } catch { toast.error('Error saving settings'); }
-    };
-
-    const handleShipOrder = async (orderId, courier) => {
-        const loadingToast = toast.loading(`Sending to ${courier}...`);
-        try {
-            const { data } = await shipOrderAPI(orderId, { courier });
-            toast.success(data.message, { id: loadingToast });
-            loadData();
-        } catch (err) {
-            toast.error(err.response?.data?.message || 'Shipping failed', { id: loadingToast });
-        }
-    };
-
     const navItems = [
         { id: 'dashboard', icon: <FiGrid />, label: 'Dashboard' },
         { id: 'products', icon: <FiPackage />, label: 'Products' },
@@ -230,7 +207,6 @@ const AdminDashboard = () => {
         { id: 'payments', icon: <FiDollarSign />, label: 'Advance Payments' },
         { id: 'users', icon: <FiUsers />, label: 'Users' },
         { id: 'coupons', icon: <FiTag />, label: 'Coupons' },
-        { id: 'courier', icon: <FiTruck />, label: 'Courier' },
     ];
 
     return (
@@ -658,26 +634,6 @@ const AdminDashboard = () => {
                                                     <td>
                                                         <div style={{ display: 'flex', gap: '4px' }}>
                                                             <button className="btn btn-secondary btn-sm" onClick={() => { setActiveOrder(o); setModal('orderDetails'); }} style={{ padding: '6px' }} title="View Details"><FiEye /></button>
-                                                            {o.status === 'pending' && (
-                                                                <>
-                                                                    <button 
-                                                                        className="btn btn-sm" 
-                                                                        onClick={() => handleShipOrder(o._id, 'steadfast')}
-                                                                        style={{ padding: '6px', background: 'rgba(5, 150, 105, 0.1)', color: '#059669', border: '1px solid #059669' }}
-                                                                        title="Send to Steadfast"
-                                                                    >
-                                                                        SF
-                                                                    </button>
-                                                                    <button 
-                                                                        className="btn btn-sm" 
-                                                                        onClick={() => handleShipOrder(o._id, 'pathao')}
-                                                                        style={{ padding: '6px', background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444', border: '1px solid #ef4444' }}
-                                                                        title="Send to Pathao"
-                                                                    >
-                                                                        PH
-                                                                    </button>
-                                                                </>
-                                                            )}
                                                             <button className="btn btn-danger btn-sm" onClick={() => handleDeleteOrder(o._id)} style={{ padding: '6px' }} title="Delete"><FiTrash2 /></button>
                                                         </div>
                                                     </td>
@@ -780,16 +736,12 @@ const AdminDashboard = () => {
                             <div className="fade-in">
                                 <div className="table-container">
                                     <table>
-                                        <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Location</th><th>Orders</th><th>Spent</th><th>Role</th><th>Status</th><th>Joined</th><th>Actions</th></tr></thead>
+                                        <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Joined</th><th>Actions</th></tr></thead>
                                         <tbody>
                                             {users.map(u => (
                                                 <tr key={u._id}>
                                                     <td style={{ fontWeight: 500 }}>{u.name}</td>
                                                     <td style={{ color: 'var(--text-muted)' }}>{u.email}</td>
-                                                    <td style={{ fontWeight: 600, color: 'var(--accent)' }}>{u.phone || '-'}</td>
-                                                    <td>{u.address?.city || '-'}</td>
-                                                    <td style={{ textAlign: 'center' }}><span className="tag tag-blue">{u.orderCount || 0}</span></td>
-                                                    <td style={{ fontWeight: 700, color: 'var(--success)' }}>৳{(u.totalSpent || 0).toLocaleString()}</td>
                                                     <td>
                                                         <select className="form-input form-select" value={u.role} onChange={e => handleRoleChange(u._id, e.target.value)} style={{ padding: '4px 8px', fontSize: '0.75rem', width: '90px' }}>
                                                             <option value="user">User</option>
@@ -833,78 +785,6 @@ const AdminDashboard = () => {
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-                        )}
-
-                        {/* COURIER SETTINGS */}
-                        {activeTab === 'courier' && (
-                            <div className="fade-in">
-                                <form onSubmit={handleCourierSave} className="table-container" style={{ padding: '24px', maxWidth: '800px' }}>
-                                    <div style={{ marginBottom: '24px' }}>
-                                        <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>🚚 Courier Connection</h3>
-                                        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Configure API and Secret Keys for automated shipping labels.</p>
-                                    </div>
-
-                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
-                                        {/* Steadfast */}
-                                        <div>
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-                                                <img src="/steadfast.png" alt="Steadfast" style={{ height: '32px', background: '#fff', padding: '4px', borderRadius: '4px' }} />
-                                                <h4 style={{ margin: 0 }}>Steadfast Courier</h4>
-                                            </div>
-                                            <div className="form-group">
-                                                <label className="form-label">API Key</label>
-                                                <input 
-                                                    className="form-input" 
-                                                    value={courierSettings.steadfast?.apiKey || ''} 
-                                                    onChange={e => setCourierSettings(s => ({ ...s, steadfast: { ...s.steadfast, apiKey: e.target.value } }))}
-                                                    placeholder="Enter Steadfast API Key"
-                                                />
-                                            </div>
-                                            <div className="form-group">
-                                                <label className="form-label">Secret Key</label>
-                                                <input 
-                                                    type="password"
-                                                    className="form-input" 
-                                                    value={courierSettings.steadfast?.secretKey || ''} 
-                                                    onChange={e => setCourierSettings(s => ({ ...s, steadfast: { ...s.steadfast, secretKey: e.target.value } }))}
-                                                    placeholder="Enter Steadfast Secret Key"
-                                                />
-                                            </div>
-                                        </div>
-
-                                        {/* Pathao */}
-                                        <div>
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-                                                <img src="/pathao.png" alt="Pathao" style={{ height: '32px', background: '#fff', padding: '4px', borderRadius: '4px' }} />
-                                                <h4 style={{ margin: 0 }}>Pathao Courier</h4>
-                                            </div>
-                                            <div className="form-group">
-                                                <label className="form-label">API Key / Client ID</label>
-                                                <input 
-                                                    className="form-input" 
-                                                    value={courierSettings.pathao?.apiKey || ''} 
-                                                    onChange={e => setCourierSettings(s => ({ ...s, pathao: { ...s.pathao, apiKey: e.target.value } }))}
-                                                    placeholder="Enter Pathao API Key"
-                                                />
-                                            </div>
-                                            <div className="form-group">
-                                                <label className="form-label">Secret Key</label>
-                                                <input 
-                                                    type="password"
-                                                    className="form-input" 
-                                                    value={courierSettings.pathao?.secretKey || ''} 
-                                                    onChange={e => setCourierSettings(s => ({ ...s, pathao: { ...s.pathao, secretKey: e.target.value } }))}
-                                                    placeholder="Enter Pathao Secret Key"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div style={{ marginTop: '24px', display: 'flex', justifyContent: 'flex-end' }}>
-                                        <button type="submit" className="btn btn-primary">Save Connections</button>
-                                    </div>
-                                </form>
                             </div>
                         )}
                     </>
