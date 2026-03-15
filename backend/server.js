@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use('/uploads', express.static(UPLOADS_DIR));
 
 // Database Logic
-let db = { users: [], products: [], categories: [], orders: [], coupons: [] };
+let db = { users: [], products: [], categories: [], orders: [], coupons: [], courierSettings: { pathao: {}, steadfast: {} } };
 
 const loadDB = () => {
     try {
@@ -610,8 +610,15 @@ app.post('/api/coupons/validate', protect, (req, res) => {
 // ADMIN USER MANAGEMENT
 // ============================================================
 app.get('/api/admin/users', protect, admin, (req, res) => {
-    const users = db.users.map(({ password, ...u }) => u);
-    res.json({ success: true, users });
+    const usersWithStats = db.users.map(({ password, ...u }) => {
+        const userOrders = db.orders.filter(o => o.user?._id === u._id || o.user === u._id);
+        return {
+            ...u,
+            orderCount: userOrders.length,
+            totalSpent: userOrders.filter(o => o.paymentStatus === 'paid').reduce((acc, o) => acc + (o.totalPrice || 0), 0)
+        };
+    });
+    res.json({ success: true, users: usersWithStats });
 });
 
 app.put('/api/admin/users/:id/block', protect, admin, (req, res) => {
@@ -663,6 +670,52 @@ app.post('/api/admin/generate-description', protect, admin, (req, res) => {
     const { name, category, brand } = req.body;
     const desc = `Premium ${name}${brand ? ' by ' + brand : ''} from the ${category || 'latest'} collection. High-quality materials, exceptional craftsmanship, and modern design. Perfect for your stylish lifestyle.`;
     res.json({ success: true, description: desc });
+});
+
+// ============================================================
+// COURIER SETTINGS
+// ============================================================
+app.get('/api/admin/courier-settings', protect, admin, (req, res) => {
+    res.json({ success: true, settings: db.courierSettings || { pathao: {}, steadfast: {} } });
+});
+
+app.put('/api/admin/courier-settings', protect, admin, (req, res) => {
+    db.courierSettings = { ...db.courierSettings, ...req.body };
+    saveDB();
+    res.json({ success: true, message: 'Courier settings updated', settings: db.courierSettings });
+});
+
+app.post('/api/admin/orders/:id/ship', protect, admin, async (req, res) => {
+    const { courier } = req.body; // 'pathao' or 'steadfast'
+    const index = db.orders.findIndex(o => o._id === req.params.id);
+    if (index === -1) return res.status(404).json({ success: false, message: 'Order not found' });
+
+    const order = db.orders[index];
+    const settings = db.courierSettings[courier];
+
+    if (!settings || !settings.apiKey) {
+        return res.status(400).json({ success: false, message: `API Key for ${courier} not configured` });
+    }
+
+    try {
+        // Logic to send to Pathao or Steadfast API
+        // For now, we simulate a successful response
+        console.log(`🚚 Shipping Order ${order.orderNumber} via ${courier}...`);
+        
+        // Update order status and tracking info
+        db.orders[index].status = 'shipped';
+        db.orders[index].courier = courier;
+        db.orders[index].trackingCode = `TRK-${courier.toUpperCase()}-${Math.floor(Math.random() * 1000000)}`;
+        
+        saveDB();
+        res.json({ 
+            success: true, 
+            message: `Order sent to ${courier} successfully`,
+            trackingCode: db.orders[index].trackingCode 
+        });
+    } catch (err) {
+        res.status(500).json({ success: false, message: `Error sending to ${courier}: ${err.message}` });
+    }
 });
 
 // Start

@@ -20,12 +20,14 @@ import HelpCenter from './pages/HelpCenter.jsx';
 import ShippingInfo from './pages/ShippingInfo.jsx';
 import ReturnPolicy from './pages/ReturnPolicy.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
+import Developer from './pages/Developer.jsx';
 import WhatsAppButton from './components/WhatsAppButton.jsx';
 
 const App = () => {
     const { loading } = useAuth();
     const location = useLocation();
     const isAdmin = location.pathname.startsWith('/admin');
+    const isDeveloper = location.pathname === '/developer';
 
     // Scroll to top on route change
     useEffect(() => {
@@ -43,7 +45,7 @@ const App = () => {
 
     return (
         <>
-            <Navbar />
+            {!isDeveloper && <Navbar />}
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/products" element={<Products />} />
@@ -61,10 +63,11 @@ const App = () => {
                 <Route path="/shipping-info" element={<ShippingInfo />} />
                 <Route path="/return-policy" element={<ReturnPolicy />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/developer" element={<Developer />} />
                 <Route path="/admin/*" element={<AdminDashboard />} />
             </Routes>
             <WhatsAppButton />
-            {!isAdmin && <Footer />}
+            {!isAdmin && !isDeveloper && <Footer />}
         </>
     );
 };
