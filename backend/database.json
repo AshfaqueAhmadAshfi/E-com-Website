@@ -152,7 +152,11 @@
       "discountPrice": 950,
       "category": "cat001",
       "stock": 70,
-      "images": [],
+      "images": [
+        "/uploads/prod017_1.png",
+        "/uploads/prod017_2.png",
+        "/uploads/prod017_3.png"
+      ],
       "brand": "ChargePro",
       "featured": false,
       "tags": [
@@ -174,7 +178,9 @@
       "discountPrice": 650,
       "category": "cat005",
       "stock": 85,
-      "images": [],
+      "images": [
+        "/uploads/prod018_1.png"
+      ],
       "brand": "FlexFit",
       "featured": false,
       "tags": [
@@ -196,7 +202,9 @@
       "discountPrice": 999,
       "category": "cat006",
       "stock": 55,
-      "images": [],
+      "images": [
+        "/uploads/prod015_1.png"
+      ],
       "brand": "GlowNatur",
       "featured": false,
       "tags": [
@@ -219,14 +227,11 @@
       "category": "cat008",
       "stock": 38,
       "images": [
-        "/uploads/1772217283021-641617318_1502635468528834_6551273301770818426_n.jpg"
+        "/uploads/1773572714954-298712427.png"
       ],
       "brand": "LeatherCraft",
       "featured": true,
-      "tags": [
-        "wallet",
-        "leather"
-      ],
+      "tags": "wallet,leather",
       "ratings": 4.5,
       "numReviews": 27,
       "reviews": [],
@@ -242,7 +247,9 @@
       "discountPrice": 1800,
       "category": "cat008",
       "stock": 55,
-      "images": [],
+      "images": [
+        "/uploads/prod020_1.png"
+      ],
       "brand": "ShadeCraft",
       "featured": false,
       "tags": [
@@ -264,7 +271,9 @@
       "discountPrice": 899,
       "category": "cat003",
       "stock": 50,
-      "images": [],
+      "images": [
+        "/uploads/prod019_1.png"
+      ],
       "brand": "EcoKitchen",
       "featured": false,
       "tags": [
@@ -444,7 +453,9 @@
       "discountPrice": 5500,
       "category": "cat001",
       "stock": 28,
-      "images": [],
+      "images": [
+        "/uploads/prod004_1.png"
+      ],
       "brand": "KeyMaster",
       "featured": true,
       "tags": [
@@ -466,7 +477,9 @@
       "discountPrice": 3500,
       "category": "cat005",
       "stock": 64,
-      "images": [],
+      "images": [
+        "/uploads/prod009_1.png"
+      ],
       "brand": "SpeedRun",
       "featured": true,
       "tags": [
@@ -510,7 +523,9 @@
       "discountPrice": 3800,
       "category": "cat001",
       "stock": 52,
-      "images": [],
+      "images": [
+        "/uploads/prod001_1.png"
+      ],
       "brand": "SoundMax",
       "featured": true,
       "tags": [
@@ -540,7 +555,9 @@
       "discountPrice": 7200,
       "category": "cat001",
       "stock": 29,
-      "images": [],
+      "images": [
+        "/uploads/prod002_1.png"
+      ],
       "brand": "TechWear",
       "featured": true,
       "tags": [
@@ -562,7 +579,9 @@
       "discountPrice": 4800,
       "category": "cat002",
       "stock": 35,
-      "images": [],
+      "images": [
+        "/uploads/prod008_1.png"
+      ],
       "brand": "WeatherPro",
       "featured": true,
       "tags": [
@@ -600,6 +619,37 @@
     }
   ],
   "orders": [
+    {
+      "_id": "yv6vlsir5mtfv1m8h6eqe",
+      "orderNumber": 1009,
+      "user": "admin001",
+      "items": [
+        {
+          "product": "prod016",
+          "quantity": 1,
+          "size": null,
+          "color": null,
+          "name": "Premium Leather Wallet",
+          "price": 1500,
+          "image": "/uploads/1772217283021-641617318_1502635468528834_6551273301770818426_n.jpg"
+        }
+      ],
+      "shippingAddress": {
+        "fullName": "Admin",
+        "phone": "11111111111",
+        "street": "123 Admin St",
+        "city": "Dhaka",
+        "state": "Uttara",
+        "country": "Bangladesh"
+      },
+      "paymentMethod": "bkash",
+      "itemsPrice": 1500,
+      "shippingPrice": 70,
+      "totalPrice": 1570,
+      "status": "pending",
+      "paymentStatus": "pending",
+      "createdAt": "2026-03-14T16:34:29.313Z"
+    },
     {
       "_id": "d3u10zprz36oigcrw8kbo7",
       "orderNumber": 1008,
@@ -899,37 +949,6 @@
       "isDelivered": true,
       "deliveredAt": "2026-03-05T15:31:43.736Z",
       "createdAt": "2026-01-12T00:00:00.000Z"
-    },
-    {
-      "_id": "yv6vlsir5mtfv1m8h6eqe",
-      "orderNumber": 1009,
-      "user": "admin001",
-      "items": [
-        {
-          "product": "prod016",
-          "quantity": 1,
-          "size": null,
-          "color": null,
-          "name": "Premium Leather Wallet",
-          "price": 1500,
-          "image": "/uploads/1772217283021-641617318_1502635468528834_6551273301770818426_n.jpg"
-        }
-      ],
-      "shippingAddress": {
-        "fullName": "Admin",
-        "phone": "11111111111",
-        "street": "123 Admin St",
-        "city": "Dhaka",
-        "state": "Uttara",
-        "country": "Bangladesh"
-      },
-      "paymentMethod": "bkash",
-      "itemsPrice": 1500,
-      "shippingPrice": 70,
-      "totalPrice": 1570,
-      "status": "pending",
-      "paymentStatus": "pending",
-      "createdAt": "2026-03-14T16:34:29.313Z"
     }
   ],
   "coupons": [

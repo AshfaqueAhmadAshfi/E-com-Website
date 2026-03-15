@@ -283,10 +283,25 @@ app.put('/api/products/:id', protect, admin, upload.array('images', 5), (req, re
     if (updates.stock) updates.stock = Number(updates.stock);
     if (updates.featured !== undefined) updates.featured = updates.featured === 'true' || updates.featured === true;
 
+    // Handle Image Updates & Deletion
+    let currentImages = [];
+    if (req.body.images) {
+        try {
+            currentImages = Array.isArray(req.body.images) ? req.body.images : JSON.parse(req.body.images);
+        } catch {
+            currentImages = typeof req.body.images === 'string' ? req.body.images.split(',') : (db.products[index].images || []);
+        }
+    } else {
+        currentImages = db.products[index].images || [];
+    }
+
     if (req.files?.length > 0) {
         const newImages = req.files.map(f => `/uploads/${f.filename}`);
-        updates.images = [...(db.products[index].images || []), ...newImages];
+        currentImages = [...currentImages, ...newImages];
     }
+
+    // Enforce 5 image limit
+    updates.images = currentImages.slice(0, 5);
 
     db.products[index] = { ...db.products[index], ...updates };
     saveDB();

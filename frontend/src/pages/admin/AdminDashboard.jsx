@@ -120,8 +120,17 @@ const AdminDashboard = () => {
         if (form.sizes !== undefined) fd.append('sizes', Array.isArray(form.sizes) ? form.sizes.join(',') : form.sizes);
         if (form.colors !== undefined) fd.append('colors', Array.isArray(form.colors) ? form.colors.join(',') : form.colors);
         if (form.featured) fd.append('featured', form.featured);
-        if (form.imageFiles) {
-            Array.from(form.imageFiles).forEach(f => fd.append('images', f));
+        
+        // Handle images
+        if (form.images) {
+            // Send existing images as a comma-separated string or JSON
+            fd.append('images', Array.isArray(form.images) ? form.images.join(',') : form.images);
+        }
+        
+        if (form.imageFiles && form.imageFiles.length > 0) {
+            const currentCount = form.images?.length || 0;
+            const remainingCount = 5 - currentCount;
+            Array.from(form.imageFiles).slice(0, remainingCount).forEach(f => fd.append('images', f));
         }
         try {
             if (form._id) { await updateProductAPI(form._id, fd); toast.success('Product updated'); }
@@ -340,7 +349,10 @@ const AdminDashboard = () => {
                                             {dashboard.recentOrders?.slice(0, 10).map(o => (
                                                 <tr key={o._id}>
                                                     <td><strong style={{ color: 'var(--accent)', fontSize: '0.85rem' }}>{formatOrderNum(o)}</strong></td>
-                                                    <td>{o.user?.name}</td>
+                                                    <td>
+                                                        <div style={{ fontWeight: 600 }}>{o.shippingAddress?.fullName || o.user?.name || 'Guest'}</div>
+                                                        <div style={{ fontSize: '0.75rem', color: 'var(--accent)', fontWeight: 600 }}>{o.shippingAddress?.phone}</div>
+                                                    </td>
                                                     <td><span className={`status-badge status-${o.status}`}>{o.status}</span></td>
                                                     <td>৳{o.totalPrice?.toLocaleString()}</td>
                                                     <td style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{new Date(o.createdAt).toLocaleDateString()}</td>
@@ -641,7 +653,11 @@ const AdminDashboard = () => {
                                             {orders.filter(o => orderView === 'all' ? true : ['cancelled', 'refunded'].includes(o.status) || o.paymentStatus === 'failed').map(o => (
                                                 <tr key={o._id}>
                                                     <td><strong style={{ color: 'var(--accent)', fontSize: '0.85rem' }}>{formatOrderNum(o)}</strong></td>
-                                                    <td>{o.user?.name}<br /><span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{o.user?.email}</span><br /><span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)' }}>{o.shippingAddress?.phone}</span></td>
+                                                    <td>
+                                                        <div style={{ fontWeight: 700 }}>{o.shippingAddress?.fullName || o.user?.name || 'Guest'}</div>
+                                                        <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)' }}>{o.shippingAddress?.phone}</div>
+                                                        {o.user?.email && <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{o.user?.email}</div>}
+                                                    </td>
                                                     <td>{o.items?.length} items</td>
                                                     <td style={{ fontWeight: 600 }}>৳{o.totalPrice?.toLocaleString()}</td>
                                                     <td>
@@ -730,7 +746,10 @@ const AdminDashboard = () => {
                                                 {orders.map(o => (
                                                     <tr key={o._id}>
                                                         <td><strong style={{ color: 'var(--accent)', fontSize: '0.85rem' }}>{formatOrderNum(o)}</strong></td>
-                                                        <td style={{ fontSize: '0.85rem' }}>{o.user?.name}<br /><span style={{ fontSize: '0.75rem', fontWeight: 600 }}>{o.shippingAddress?.phone}</span></td>
+                                                        <td style={{ fontSize: '0.85rem' }}>
+                                                            <div style={{ fontWeight: 700 }}>{o.shippingAddress?.fullName || o.user?.name || 'Guest'}</div>
+                                                            <div style={{ fontSize: '0.75rem', fontWeight: 800 }}>{o.shippingAddress?.phone}</div>
+                                                        </td>
                                                         <td>
                                                             <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                                                 {['bkash', 'nagad'].includes(o.paymentMethod) && <img src={`/${o.paymentMethod}.png`} style={{ width: '20px', height: '20px', objectFit: 'contain' }} alt="" />}
@@ -1020,21 +1039,60 @@ const AdminDashboard = () => {
                                         );
                                     })()}
                                     <div className="form-group">
-                                        <label className="form-label">Images</label>
-                                        <input type="file" multiple accept="image/*" className="form-input" onChange={e => setForm(f => ({ ...f, imageFiles: e.target.files }))} />
+                                        <label className="form-label" style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                            Images (Max 5)
+                                            <span style={{ fontSize: '0.75rem', fontWeight: 500, color: (form.images?.length || 0) + (form.imageFiles?.length || 0) >= 5 ? 'var(--danger)' : 'var(--text-muted)' }}>
+                                                {(form.images?.length || 0) + (form.imageFiles?.length || 0)}/5
+                                            </span>
+                                        </label>
+                                        <input 
+                                            type="file" 
+                                            multiple 
+                                            accept="image/*" 
+                                            className="form-input" 
+                                            onChange={e => {
+                                                const totalLoaded = (form.images?.length || 0);
+                                                if (totalLoaded >= 5) {
+                                                    toast.error('Maximum 5 images allowed');
+                                                    e.target.value = '';
+                                                    return;
+                                                }
+                                                setForm(f => ({ ...f, imageFiles: e.target.files }));
+                                            }} 
+                                            disabled={(form.images?.length || 0) >= 5}
+                                        />
                                         {((form.images && form.images.length > 0) || (form.imageFiles && form.imageFiles.length > 0)) && (
-                                            <div style={{ display: 'flex', gap: '8px', marginTop: '10px', overflowX: 'auto', paddingBottom: '5px' }}>
+                                            <div style={{ display: 'flex', gap: '12px', marginTop: '12px', overflowX: 'auto', paddingBottom: '8px' }}>
                                                 {/* Existing Images */}
                                                 {form.images?.map((img, i) => (
-                                                    <div key={i} style={{ width: '60px', height: '60px', borderRadius: '8px', border: '1px solid var(--border)', overflow: 'hidden', flexShrink: 0 }}>
+                                                    <div key={i} style={{ width: '80px', height: '80px', borderRadius: '10px', border: '1px solid var(--border)', overflow: 'hidden', flexShrink: 0, position: 'relative', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
                                                         <img src={img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                        <button 
+                                                            type="button"
+                                                            onClick={() => setForm(f => ({ ...f, images: f.images.filter((_, idx) => idx !== i) }))}
+                                                            style={{ position: 'absolute', top: '4px', right: '4px', background: 'rgba(239, 68, 68, 0.9)', color: 'white', border: 'none', borderRadius: '50%', width: '22px', height: '22px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: '14px', backdropFilter: 'blur(4px)' }}
+                                                            title="Delete Image"
+                                                        >
+                                                            ×
+                                                        </button>
                                                     </div>
                                                 ))}
                                                 {/* New Selection Previews */}
                                                 {form.imageFiles && Array.from(form.imageFiles).map((file, i) => (
-                                                    <div key={i} style={{ width: '60px', height: '60px', borderRadius: '8px', border: '2px dashed var(--accent)', overflow: 'hidden', flexShrink: 0, position: 'relative' }}>
-                                                        <img src={URL.createObjectURL(file)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                                                        <div style={{ position: 'absolute', top: 0, right: 0, background: 'var(--accent)', color: 'white', fontSize: '10px', padding: '2px 4px' }}>New</div>
+                                                    <div key={i} style={{ width: '80px', height: '80px', borderRadius: '10px', border: '2px dashed var(--accent)', overflow: 'hidden', flexShrink: 0, position: 'relative', boxShadow: '0 4px 10px rgba(0,123,255,0.1)' }}>
+                                                        <img src={URL.createObjectURL(file)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7 }} />
+                                                        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'var(--accent)', color: 'white', fontSize: '10px', padding: '2px', textAlign: 'center', fontWeight: 700 }}>NEW</div>
+                                                        <button 
+                                                            type="button"
+                                                            onClick={() => {
+                                                                const dt = new DataTransfer();
+                                                                Array.from(form.imageFiles).filter((_, idx) => idx !== i).forEach(f => dt.items.add(f));
+                                                                setForm(f => ({ ...f, imageFiles: dt.files }));
+                                                            }}
+                                                            style={{ position: 'absolute', top: '4px', right: '4px', background: 'rgba(0,0,0,0.6)', color: 'white', border: 'none', borderRadius: '50%', width: '22px', height: '22px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: '14px' }}
+                                                        >
+                                                            ×
+                                                        </button>
                                                     </div>
                                                 ))}
                                             </div>
@@ -1112,7 +1170,7 @@ const AdminDashboard = () => {
                                     <div>
                                         <h4 style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '1px' }}>Customer Info</h4>
                                         <div style={{ marginBottom: '24px' }}>
-                                            <div style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '4px' }}>{activeOrder.user?.name}</div>
+                                            <div style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '4px' }}>{activeOrder.shippingAddress?.fullName || activeOrder.user?.name || 'Guest'}</div>
                                             <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '4px' }}>{activeOrder.user?.email}</div>
                                             <div style={{ fontWeight: 800, color: 'var(--accent-light)', fontSize: '1rem' }}>{activeOrder.shippingAddress?.phone}</div>
                                         </div>
